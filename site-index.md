@@ -1,0 +1,42 @@
+# Laz Army Site Index
+
+Generated on 10/23/2025, 2:35:40 PM
+
+- 📁 **//**
+  - 📁 **app/**
+    - 📄 globals.css
+    - 📄 layout.tsx
+    - 📄 page.tsx
+    - 📄 robots.ts
+    - 📄 sitemap.ts
+  - 📁 **assets/**
+    - 📄 Banner1.jpg
+    - 📄 Banner11.jpeg
+    - 📄 Banner12.jpeg
+    - 📄 Banner13.jpeg
+    - 📄 Banner14.jpeg
+    - 📄 Banner15.jpeg
+    - 📄 Banner16.jpeg
+    - 📄 Banner17.jpeg
+    - 📄 Banner18.jpeg
+    - 📄 Banner2.jpg
+    - 📄 Banner3.jpg
+    - 📄 Lazarmy-logo.png
+  - 📁 **components/**
+    - 📄 About.tsx
+    - 📄 Contact.tsx
+    - 📄 Footer.tsx
+    - 📄 Header.tsx
+    - 📄 Hero.tsx
+    - 📄 Join.tsx
+    - 📄 LazArmyRecords.tsx
+    - 📄 LazarusFrequency.tsx
+    - 📄 Merch.tsx
+  - 📄 generate-index.js
+  - 📄 next-env.d.ts
+  - 📄 next.config.js
+  - 📄 package-lock.json
+  - 📄 package.json
+  - 📄 postcss.config.js
+  - 📄 tailwind.config.js
+  - 📄 tsconfig.json
