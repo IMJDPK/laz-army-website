@@ -40,6 +40,33 @@ export default function Blog() {
       slug: 'new-tour-dates-announcement',
       category: 'Tour',
     },
+    {
+      id: '4',
+      title: 'Studio Sessions: Recording Process',
+      excerpt: 'Inside the studio capturing the raw energy and creativity that goes into each track.',
+      date: '2024-08-22',
+      image: '/assets/Banner14.jpeg',
+      slug: 'studio-sessions-recording',
+      category: 'Music Production',
+    },
+    {
+      id: '5',
+      title: 'Community Outreach & Medical Work',
+      excerpt: 'Giving back to the community through medical missions and health awareness campaigns.',
+      date: '2024-08-05',
+      image: '/assets/Banner15.jpeg',
+      slug: 'community-outreach-medical',
+      category: 'Community',
+    },
+    {
+      id: '6',
+      title: 'Collaboration Stories',
+      excerpt: 'Working with talented artists and producers to create something truly special.',
+      date: '2024-07-18',
+      image: '/assets/Banner16.jpeg',
+      slug: 'collaboration-stories',
+      category: 'Music Production',
+    },
   ]
 
   return (

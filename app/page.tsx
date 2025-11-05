@@ -11,6 +11,7 @@ import Merch from '../components/Merch'
 import Join from '../components/Join'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
+import Gallery from '../components/Gallery'
 
 export default function Page() {
   return (
@@ -42,6 +43,11 @@ export default function Page() {
         {/* Tour Dates - Full Width */}
         <div className="mt-10">
           <Tours />
+        </div>
+        
+        {/* Gallery Section - Full Width */}
+        <div className="mt-10">
+          <Gallery />
         </div>
         
         {/* Bottom Sections */}

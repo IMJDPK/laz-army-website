@@ -5,7 +5,7 @@ export default function Hero() {
     <section className='relative h-80 rounded-xl overflow-hidden'>
       {/* Background Image */}
       <Image
-        src='/assets/lazarmy-main-banner.jpg'
+        src='/assets/New Banner1.JPG'
         alt='Lazarus - Hip Hop Artist and Physician'
         fill
         priority

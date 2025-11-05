@@ -10,6 +10,7 @@ export default function Header({ siteTitle }: { siteTitle: string }) {
     { name: 'Music', href: '#music' },
     { name: 'News', href: '#blog' },
     { name: 'Tour', href: '#tour' },
+    { name: 'Gallery', href: '#gallery' },
     { name: 'Merch', href: '#merch' },
     { name: 'Contact', href: '#contact' },
   ]

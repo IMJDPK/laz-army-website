@@ -11,17 +11,17 @@ type Item = {
 }
 
 const formatPrice = (n: number) =>
-  new Intl.NumberFormat('en-PK', {
+  new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'PKR',
+    currency: 'USD',
     maximumFractionDigits: 0,
   }).format(n)
 
 export default function Merch() {
   const items: Item[] = [
-    { id: 1, title: 'Laz Army Hoodie', price: 4500, img: '/assets/Banner11.jpeg' },
-    { id: 2, title: 'Laz Army Tee', price: 2000, img: '/assets/Banner12.jpeg' },
-    { id: 3, title: 'Laz Army Cap', price: 1800, img: '/assets/Banner13.jpeg' },
+    { id: 1, title: 'Laz Army Hoodie', price: 100, img: '/assets/Banner11.jpeg' },
+    { id: 2, title: 'Laz Army Tee', price: 60, img: '/assets/Banner12.jpeg' },
+    { id: 3, title: 'Laz Army Cap', price: 80, img: '/assets/Banner13.jpeg' },
   ]
 
   const handleOrderClick = (itemTitle: string) => {

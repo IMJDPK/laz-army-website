@@ -1,29 +1,29 @@
 # Laz Army Site Index
 
-Generated on 10/23/2025, 2:35:40 PM
+Generated on 11/5/2025, 11:05:26 AM
 
 - 📁 **//**
+  - 📁 **.github/**
+    - 📄 copilot-instructions.md
   - 📁 **app/**
+    - 📁 **app/blog/**
+      - 📄 page.tsx
+    - 📁 **app/privacy/**
+      - 📄 page.tsx
+    - 📁 **app/terms/**
+      - 📄 page.tsx
+    - 📄 error.tsx
     - 📄 globals.css
     - 📄 layout.tsx
+    - 📄 loading.tsx
+    - 📄 not-found.tsx
     - 📄 page.tsx
     - 📄 robots.ts
     - 📄 sitemap.ts
-  - 📁 **assets/**
-    - 📄 Banner1.jpg
-    - 📄 Banner11.jpeg
-    - 📄 Banner12.jpeg
-    - 📄 Banner13.jpeg
-    - 📄 Banner14.jpeg
-    - 📄 Banner15.jpeg
-    - 📄 Banner16.jpeg
-    - 📄 Banner17.jpeg
-    - 📄 Banner18.jpeg
-    - 📄 Banner2.jpg
-    - 📄 Banner3.jpg
-    - 📄 Lazarmy-logo.png
   - 📁 **components/**
     - 📄 About.tsx
+    - 📄 Analytics.tsx
+    - 📄 Blog.tsx
     - 📄 Contact.tsx
     - 📄 Footer.tsx
     - 📄 Header.tsx
@@ -32,11 +32,47 @@ Generated on 10/23/2025, 2:35:40 PM
     - 📄 LazArmyRecords.tsx
     - 📄 LazarusFrequency.tsx
     - 📄 Merch.tsx
+    - 📄 Music.tsx
+    - 📄 OptimizedImage.tsx
+    - 📄 Tours.tsx
+  - 📁 **public/**
+    - 📁 **public/assets/**
+      - 📄 Banner1.jpg
+      - 📄 Banner11.jpeg
+      - 📄 Banner12.jpeg
+      - 📄 Banner13.jpeg
+      - 📄 Banner14.jpeg
+      - 📄 Banner15.jpeg
+      - 📄 Banner16.jpeg
+      - 📄 Banner17.jpeg
+      - 📄 Banner18.jpeg
+      - 📄 Banner2.jpg
+      - 📄 Banner3.jpg
+      - 📄 BannerN-11.JPG
+      - 📄 BannerN-12.JPG
+      - 📄 BannerN-13.JPG
+      - 📄 BannerN-14.JPEG
+      - 📄 BannerN-15.jpg
+      - 📄 BannerN-16.jpg
+      - 📄 BannerN-17.jpg
+      - 📄 BannerN-18.jpg
+      - 📄 BannerN-19.jpg
+      - 📄 LAZARMY-A-Sqaure-highres.jpg
+      - 📄 Lazarmy-logo.png
+      - 📄 lazarmy-main-banner.jpg
+    - 📄 site.webmanifest
+  - 📄 .env.example
+  - 📄 IMPLEMENTATION_SUMMARY.md
+  - 📄 PHASE2_COMPLETE.md
+  - 📄 QUICK_START.md
+  - 📄 README.md
   - 📄 generate-index.js
   - 📄 next-env.d.ts
   - 📄 next.config.js
   - 📄 package-lock.json
   - 📄 package.json
   - 📄 postcss.config.js
+  - 📄 site-index.md
   - 📄 tailwind.config.js
   - 📄 tsconfig.json
+  - 📄 website-checklist.md

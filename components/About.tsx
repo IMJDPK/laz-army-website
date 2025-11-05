@@ -6,10 +6,10 @@ export default function About() {
       <div className='flex flex-col items-center mb-4'>
         <div className='relative w-32 h-32 rounded-2xl overflow-hidden mb-4 ring-4 ring-yellow-400/20'>
           <Image
-            src='/assets/Lazarmy-logo.png'
+            src='/assets/LAZARMY-A-Sqaure-highres.jpg'
             alt='Lazarus - Laz Army Records Logo'
             fill
-            className='object-contain p-2'
+            className='object-cover'
             sizes='128px'
           />
         </div>

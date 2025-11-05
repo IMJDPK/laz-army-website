@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 interface TourDate {
   id: string
   date: string
@@ -9,6 +11,7 @@ interface TourDate {
   country: string
   ticketUrl?: string
   status: 'on-sale' | 'sold-out' | 'upcoming'
+  backgroundImage?: string
 }
 
 export default function Tours() {
@@ -23,6 +26,7 @@ export default function Tours() {
       country: 'USA',
       ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
       status: 'on-sale',
+      backgroundImage: '/assets/BannerN-11.JPG',
     },
     {
       id: '2',
@@ -33,6 +37,7 @@ export default function Tours() {
       country: 'USA',
       ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
       status: 'on-sale',
+      backgroundImage: '/assets/BannerN-12.JPG',
     },
     {
       id: '3',
@@ -43,6 +48,7 @@ export default function Tours() {
       country: 'USA',
       ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
       status: 'sold-out',
+      backgroundImage: '/assets/BannerN-13.JPG',
     },
   ]
 
@@ -86,11 +92,29 @@ export default function Tours() {
               return (
                 <div
                   key={show.id}
-                  className="bg-gray-800 rounded-lg p-6 hover:bg-gray-750 transition-colors duration-300 shadow-lg hover:shadow-xl"
+                  className="relative bg-gray-800 rounded-lg overflow-hidden p-6 hover:bg-gray-750 transition-colors duration-300 shadow-lg hover:shadow-xl"
                   itemScope
                   itemType="https://schema.org/MusicEvent"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                  {/* Background Image */}
+                  {show.backgroundImage && (
+                    <>
+                      <div className="absolute inset-0 z-0">
+                        <Image
+                          src={show.backgroundImage}
+                          alt={`${show.venue} - ${show.city}`}
+                          fill
+                          className="object-cover opacity-20"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-800/90 z-1"></div>
+                    </>
+                  )}
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                     {/* Date */}
                     <div className="flex items-center gap-6">
                       <div className="text-center min-w-[80px]">
@@ -165,6 +189,7 @@ export default function Tours() {
                         </button>
                       )}
                     </div>
+                  </div>
                   </div>
                 </div>
               )
