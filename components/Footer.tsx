@@ -12,6 +12,20 @@ export default function Footer() {
       ),
     },
     {
+      name: 'Apple Music',
+      url: process.env.NEXT_PUBLIC_APPLE_MUSIC_URL || 'https://music.apple.com/us/artist/lazarus/1558898100',
+      icon: (
+        <svg className="w-5 h-5" viewBox="0 0 24 24" aria-hidden="true">
+          <linearGradient id="appleMusicGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#fa57c1" />
+            <stop offset="50%" stopColor="#7b72ff" />
+            <stop offset="100%" stopColor="#46cdfb" />
+          </linearGradient>
+          <path fill="url(#appleMusicGradient)" d="M16.75 2.5c.41 0 .75.34.75.75v11.38c0 2.33-1.9 4.22-4.22 4.22-2.04 0-3.72-1.68-3.72-3.72s1.68-3.72 3.72-3.72c.9 0 1.72.32 2.37.85V5.51l-5.24 1.12v8.5c0 2.33-1.9 4.22-4.22 4.22C4.9 19.35 3 17.47 3 15.14c0-2.04 1.68-3.72 3.72-3.72.9 0 1.72.32 2.37.85V5.26c0-.36.25-.67.6-.74l6.63-1.41c.05-.01.1-.01.15-.01Z" />
+        </svg>
+      ),
+    },
+    {
       name: 'Instagram',
       url: process.env.NEXT_PUBLIC_INSTAGRAM_URL || 'https://www.instagram.com/lazdetroit/',
       icon: (

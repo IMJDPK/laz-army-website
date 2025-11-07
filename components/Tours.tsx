@@ -19,36 +19,93 @@ export default function Tours() {
   const tourDates: TourDate[] = [
     {
       id: '1',
-      date: '2024-11-15',
+      date: '2024-11-01',
+      venue: 'Fox Theatre',
+      city: 'Detroit',
+      state: 'MI',
+      country: 'USA',
+      status: 'sold-out',
+  backgroundImage: '/assets/Banner11.jpeg',
+    },
+    {
+      id: '2',
+      date: '2024-11-08',
       venue: 'The Metro',
       city: 'Chicago',
       state: 'IL',
       country: 'USA',
-      ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
-      status: 'on-sale',
-      backgroundImage: '/assets/BannerN-11.JPG',
-    },
-    {
-      id: '2',
-      date: '2024-11-22',
-      venue: 'Brooklyn Steel',
-      city: 'Brooklyn',
-      state: 'NY',
-      country: 'USA',
-      ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
-      status: 'on-sale',
+      status: 'sold-out',
       backgroundImage: '/assets/BannerN-12.JPG',
     },
     {
       id: '3',
-      date: '2024-12-01',
-      venue: 'The Wiltern',
-      city: 'Los Angeles',
-      state: 'CA',
+      date: '2024-11-15',
+      venue: 'Brooklyn Steel',
+      city: 'Brooklyn',
+      state: 'NY',
       country: 'USA',
-      ticketUrl: 'https://ticketmaster.com/event/YOUR_EVENT_ID',
       status: 'sold-out',
       backgroundImage: '/assets/BannerN-13.JPG',
+    },
+    {
+      id: '4',
+      date: '2024-11-22',
+      venue: 'Coca-Cola Arena',
+      city: 'Dubai',
+      state: 'Dubai',
+      country: 'UAE',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-14.JPEG',
+    },
+    {
+      id: '5',
+      date: '2024-11-29',
+      venue: 'Pakistan National Council of Arts',
+      city: 'Islamabad',
+      state: 'ICT',
+      country: 'Pakistan',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-15.jpg',
+    },
+    {
+      id: '6',
+      date: '2024-12-05',
+      venue: 'Doha Exhibition Center',
+      city: 'Doha',
+      state: 'Doha',
+      country: 'Qatar',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-16.jpg',
+    },
+    {
+      id: '7',
+      date: '2024-12-12',
+      venue: 'Afrika Shrine',
+      city: 'Lagos',
+      state: 'Lagos',
+      country: 'Nigeria',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-17.jpg',
+    },
+    {
+      id: '8',
+      date: '2024-12-19',
+      venue: 'Carnivore Grounds',
+      city: 'Nairobi',
+      state: 'Nairobi',
+      country: 'Kenya',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-18.jpg',
+    },
+    {
+      id: '9',
+      date: '2024-12-27',
+      venue: 'Cape Town International Convention Centre',
+      city: 'Cape Town',
+      state: 'Western Cape',
+      country: 'South Africa',
+      status: 'sold-out',
+      backgroundImage: '/assets/BannerN-19.jpg',
     },
   ]
 
@@ -62,13 +119,13 @@ export default function Tours() {
 
   const statusStyles = {
     'on-sale': 'bg-green-600 text-white',
-    'sold-out': 'bg-red-600 text-white',
+    'sold-out': 'bg-gradient-to-r from-red-600 to-red-700 text-white animate-pulse',
     'upcoming': 'bg-blue-600 text-white',
   }
 
   const statusLabels = {
     'on-sale': 'Tickets Available',
-    'sold-out': 'Sold Out',
+    'sold-out': 'SOLD OUT',
     'upcoming': 'Tickets Coming Soon',
   }
 
@@ -136,15 +193,15 @@ export default function Tours() {
                           {show.venue}
                         </h3>
                         <div
-                          className="text-gray-400"
+                          className="text-gray-400 flex flex-wrap items-center gap-1"
                           itemProp="location"
                           itemScope
                           itemType="https://schema.org/Place"
                         >
-                          <span itemProp="address">
+                          <span itemProp="address" className="">
                             {show.city}, {show.state}
                           </span>
-                          {show.country !== 'USA' && ` • ${show.country}`}
+                          <span className="text-gray-500">• {show.country}</span>
                         </div>
                       </div>
                     </div>
@@ -172,12 +229,15 @@ export default function Tours() {
                       )}
                       
                       {show.status === 'sold-out' && (
-                        <button
-                          disabled
-                          className="bg-gray-600 text-gray-400 font-bold py-2 px-6 rounded-full cursor-not-allowed"
+                        <div
+                          aria-label="Sold Out"
+                          className="relative inline-flex items-center gap-2 bg-red-700/20 text-red-400 font-bold py-2 px-5 rounded-full border border-red-600/40"
                         >
-                          Sold Out
-                        </button>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                          <span className="tracking-wider">SOLD OUT</span>
+                        </div>
                       )}
                       
                       {show.status === 'upcoming' && (

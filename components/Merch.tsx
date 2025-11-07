@@ -18,10 +18,11 @@ const formatPrice = (n: number) =>
   }).format(n)
 
 export default function Merch() {
+  // Updated to use dedicated merch asset images instead of generic banners
   const items: Item[] = [
-    { id: 1, title: 'Laz Army Hoodie', price: 100, img: '/assets/Banner11.jpeg' },
-    { id: 2, title: 'Laz Army Tee', price: 60, img: '/assets/Banner12.jpeg' },
-    { id: 3, title: 'Laz Army Cap', price: 80, img: '/assets/Banner13.jpeg' },
+    { id: 1, title: 'Laz Army Hoodie', price: 100, img: '/assets/Hoodie.png' },
+    { id: 2, title: 'Laz Army Tee', price: 60, img: '/assets/Tshirt.png' },
+    { id: 3, title: 'Laz Army Cap', price: 80, img: '/assets/cap.png' },
   ]
 
   const handleOrderClick = (itemTitle: string) => {
@@ -50,7 +51,7 @@ export default function Merch() {
               <div className='relative h-64 overflow-hidden bg-neutral-900'>
                 <Image
                   src={it.img}
-                  alt={`${it.title} - Laz Army official merchandise`}
+                  alt={`${it.title} product image - Laz Army official merchandise`}
                   fill
                   className='object-contain group-hover:scale-110 transition-transform duration-500'
                   sizes='(max-width: 768px) 100vw, 33vw'

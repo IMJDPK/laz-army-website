@@ -25,7 +25,7 @@ export default function Gallery() {
     { id: '9', src: '/assets/BannerN-17.jpg', alt: 'Live Performance', category: 'performance' },
     { id: '10', src: '/assets/BannerN-18.jpg', alt: 'Backstage Moments', category: 'behind-scenes' },
     { id: '11', src: '/assets/BannerN-19.jpg', alt: 'Community Event', category: 'community' },
-    { id: '12', src: '/assets/New Banner.JPG', alt: 'Professional Portrait', category: 'portrait' },
+  { id: '12', src: '/assets/New Banner1.JPG', alt: 'Professional Portrait', category: 'portrait' },
   ]
   
   const categories = [
