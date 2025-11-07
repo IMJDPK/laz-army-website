@@ -6,8 +6,8 @@ export default function About() {
       <div className='flex flex-col items-center mb-4'>
         <div className='relative w-32 h-32 rounded-2xl overflow-hidden mb-4 ring-4 ring-yellow-400/20'>
           <Image
-            src='/assets/LAZARMY-A-Sqaure-highres.jpg'
-            alt='Lazarus - Laz Army Records Logo'
+            src='/assets/About-Us.jpeg'
+            alt='Lazarus - Laz Army Records'
             fill
             className='object-cover'
             sizes='128px'

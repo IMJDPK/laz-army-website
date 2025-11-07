@@ -27,7 +27,7 @@ export default function Blog() {
       title: 'Balancing Medicine and Music: My Journey',
       excerpt: 'How I navigate being both a physician and a hip hop artist, and what drives me in both worlds.',
       date: '2024-09-28',
-      image: '/assets/Banner12.jpeg',
+      image: '/assets/Balancing-medicine.jpeg',
       slug: 'balancing-medicine-music',
       category: 'Personal Story',
     },
@@ -54,7 +54,7 @@ export default function Blog() {
       title: 'Community Outreach & Medical Work',
       excerpt: 'Giving back to the community through medical missions and health awareness campaigns.',
       date: '2024-08-05',
-      image: '/assets/Banner15.jpeg',
+      image: '/assets/community-outreach.png',
       slug: 'community-outreach-medical',
       category: 'Community',
     },
@@ -63,7 +63,7 @@ export default function Blog() {
       title: 'Collaboration Stories',
       excerpt: 'Working with talented artists and producers to create something truly special.',
       date: '2024-07-18',
-      image: '/assets/Banner16.jpeg',
+      image: '/assets/collaboration.png',
       slug: 'collaboration-stories',
       category: 'Music Production',
     },
@@ -143,12 +143,9 @@ export default function Blog() {
         </div>
 
         <div className="text-center mt-12">
-          <a
-            href="/blog"
-            className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-3 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-          >
-            View All Posts
-          </a>
+          <p className="text-gray-400 text-sm">
+            More stories coming soon - Stay tuned!
+          </p>
         </div>
       </div>
     </section>
