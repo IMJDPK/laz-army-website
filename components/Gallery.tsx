@@ -20,10 +20,7 @@ export default function Gallery() {
     { id: '4', src: '/assets/Banner17.jpeg', alt: 'Live Concert', category: 'performance' },
     { id: '5', src: '/assets/Banner18.jpeg', alt: 'Recording Process', category: 'studio' },
     { id: '6', src: '/assets/BannerN-14.JPEG', alt: 'Music Video Shoot', category: 'video' },
-    { id: '7', src: '/assets/BannerN-15.jpg', alt: 'Fan Meet & Greet', category: 'fans' },
-    { id: '8', src: '/assets/BannerN-16.jpg', alt: 'Album Cover Shoot', category: 'studio' },
     { id: '9', src: '/assets/BannerN-17.jpg', alt: 'Live Performance', category: 'performance' },
-    { id: '10', src: '/assets/BannerN-18.jpg', alt: 'Backstage Moments', category: 'behind-scenes' },
     { id: '11', src: '/assets/BannerN-19.jpg', alt: 'Community Event', category: 'community' },
   { id: '12', src: '/assets/New Banner1.JPG', alt: 'Professional Portrait', category: 'portrait' },
   ]

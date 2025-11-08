@@ -29,12 +29,12 @@ export default function StudioSessionsPost() {
           </time>
         </header>
 
-        <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden bg-gray-900">
           <Image
-            src="/assets/Banner14.jpeg"
+            src="/assets/Banner-20.jpeg"
             alt="Studio recording session"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
 

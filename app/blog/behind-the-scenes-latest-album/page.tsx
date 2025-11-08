@@ -29,12 +29,12 @@ export default function BehindTheScenesPost() {
           </time>
         </header>
 
-        <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-96 mb-12 rounded-2xl overflow-hidden bg-gray-900">
           <Image
-            src="/assets/Banner11.jpeg"
+            src="/assets/Banner-19.jpeg"
             alt="Behind the scenes album creation"
             fill
-            className="object-cover"
+            className="object-contain"
           />
         </div>
 
