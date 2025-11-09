@@ -310,8 +310,8 @@ export default function Music() {
                         className="absolute inset-0 flex items-center justify-center"
                         aria-label={`Watch ${video.title} on YouTube`}
                       >
-                        <div className="w-12 h-12 md:w-16 md:h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                          <svg className="w-6 h-6 md:w-8 md:h-8 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+                        <div className="w-8 h-8 md:w-16 md:h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                          <svg className="w-4 h-4 md:w-8 md:h-8 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M8 5v14l11-7z"/>
                           </svg>
                         </div>
@@ -323,12 +323,12 @@ export default function Music() {
                       <h4 className="text-white font-semibold text-sm md:text-base mb-1 line-clamp-2">
                         {video.title}
                       </h4>
-                      <div className="flex items-center justify-between gap-2">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
                         <a
                           href={`https://www.youtube.com/watch?v=${video.videoId}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-400 text-xs md:text-sm hover:text-purple-400 transition-colors inline-flex items-center gap-1"
+                          className="text-gray-400 text-xs md:text-sm hover:text-purple-400 transition-colors inline-flex items-center gap-1 flex-shrink-0"
                         >
                           <svg className="w-3 h-3 md:w-4 md:h-4" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -336,12 +336,12 @@ export default function Music() {
                           Watch
                         </a>
                         {!isLoadingViews && videoViews[video.videoId] && (
-                          <div className="flex items-center gap-1 text-gray-500">
-                            <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                          <div className="flex items-center gap-1 text-gray-500 flex-shrink-0 min-w-0">
+                            <svg className="w-3 h-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                               <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                             </svg>
-                            <span className="text-xs">
+                            <span className="text-xs truncate">
                               <AnimatedCounter value={videoViews[video.videoId]} />
                             </span>
                           </div>
