@@ -95,10 +95,10 @@ export const trackStreamClick = (platform: string) => {
   })
 }
 
-export const trackMerchClick = (item: string) => {
+export const trackGearClick = (item: string) => {
   event({
     action: 'click',
-    category: 'Merch',
+    category: 'Gear',
     label: item,
   })
 }

@@ -100,7 +100,7 @@ export default function Footer() {
           <a href='#music' className='text-neutral-400 hover:text-white transition-colors'>Music</a>
           <a href='#blog' className='text-neutral-400 hover:text-white transition-colors'>News</a>
           <a href='#tour' className='text-neutral-400 hover:text-white transition-colors'>Tour</a>
-          <a href='#merch' className='text-neutral-400 hover:text-white transition-colors'>Merch</a>
+          <a href='#gear' className='text-neutral-400 hover:text-white transition-colors'>Gear</a>
           <a href='#contact' className='text-neutral-400 hover:text-white transition-colors'>Contact</a>
           <a href='/privacy' className='text-neutral-400 hover:text-white transition-colors'>Privacy</a>
           <a href='/terms' className='text-neutral-400 hover:text-white transition-colors'>Terms</a>

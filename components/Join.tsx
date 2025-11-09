@@ -72,7 +72,7 @@ export default function Join() {
         </div>
         <div className='text-center p-3 bg-black/30 rounded-lg'>
           <span className='text-2xl mb-2 block'>🎁</span>
-          <p className='text-sm text-neutral-300'>Exclusive Merch Drops</p>
+          <p className='text-sm text-neutral-300'>Exclusive Gear Drops</p>
         </div>
       </div>
 

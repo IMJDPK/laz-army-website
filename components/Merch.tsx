@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { trackMerchClick } from './Analytics'
+import { trackGearClick } from './Analytics'
 
 const WA_NUMBER = '923001234567'
 
@@ -26,14 +26,14 @@ export default function Merch() {
   ]
 
   const handleOrderClick = (itemTitle: string) => {
-    trackMerchClick(itemTitle)
+    trackGearClick(itemTitle)
   }
 
   return (
-    <section id='merch' className='p-8 bg-neutral-900 rounded-xl border border-neutral-800'>
+    <section id='gear' className='p-8 bg-neutral-900 rounded-xl border border-neutral-800'>
       <div className='text-center mb-8'>
         <h3 className='text-3xl font-bold mb-2 bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent'>
-          Laz Army Merch
+          Laz Army Gear
         </h3>
         <p className='text-neutral-400'>Rep the movement. Wear the culture.</p>
       </div>
@@ -51,7 +51,7 @@ export default function Merch() {
               <div className='relative h-64 overflow-hidden bg-neutral-900'>
                 <Image
                   src={it.img}
-                  alt={`${it.title} product image - Laz Army official merchandise`}
+                  alt={`${it.title} product image - Laz Army official gear`}
                   fill
                   className='object-contain group-hover:scale-110 transition-transform duration-500'
                   sizes='(max-width: 768px) 100vw, 33vw'
