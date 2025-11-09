@@ -64,66 +64,113 @@ export default function Music() {
     // Fetch real video titles and view counts from YouTube
     const fetchVideoData = async () => {
       const API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY
-      
-      // If no API key, use static known counts
+
+      // Known counts as fallback if API not available or rate-limited
       const knownViewCounts: Record<string, number> = {
         'et1IEh8AtYw': 10200000, // Not To Be Defined - verified 10.2M+ views
       }
-      
-      const videoData: Video[] = await Promise.all(
-        videoIds.map(async (videoId, index) => {
-          try {
-            // Fetch title from oEmbed API
-            const oEmbedResponse = await fetch(
-              `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
-            )
-            const oEmbedData = await oEmbedResponse.json()
-            
-            let views = knownViewCounts[videoId] || 0
-            
-            // If API key is available, fetch real-time view count
-            if (API_KEY && !knownViewCounts[videoId]) {
-              try {
-                const statsResponse = await fetch(
-                  `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`
-                )
-                const statsData = await statsResponse.json()
-                if (statsData.items?.[0]?.statistics?.viewCount) {
-                  views = parseInt(statsData.items[0].statistics.viewCount)
+
+      try {
+        let videoData: Video[] = []
+
+        if (API_KEY) {
+          // Single batched request for all video stats and titles
+          const ids = videoIds.join(',')
+          const apiUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,statistics&id=${ids}&key=${API_KEY}`
+          const statsResponse = await fetch(apiUrl)
+          const statsData = await statsResponse.json()
+
+          if (Array.isArray(statsData.items)) {
+            // Map id -> item for quick lookup
+            const itemById: Record<string, any> = {}
+            statsData.items.forEach((it: any) => {
+              itemById[it.id] = it
+            })
+
+            videoData = await Promise.all(
+              videoIds.map(async (videoId, index) => {
+                const item = itemById[videoId]
+                // If snippet is missing for any reason, fall back to oEmbed for title
+                let title = item?.snippet?.title as string | undefined
+                if (!title) {
+                  try {
+                    const oEmbedResponse = await fetch(
+                      `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
+                    )
+                    const oEmbedData = await oEmbedResponse.json()
+                    title = oEmbedData.title
+                  } catch { /* ignore */ }
                 }
-              } catch (e) {
-                console.log('Could not fetch real-time views for', videoId)
+
+                const viewStr = item?.statistics?.viewCount as string | undefined
+                const views = viewStr ? parseInt(viewStr) : knownViewCounts[videoId]
+
+                return {
+                  id: String(index + 1),
+                  videoId,
+                  title: title || `Video ${index + 1}`,
+                  views: views || undefined,
+                }
+              })
+            )
+          } else {
+            throw new Error('Invalid API response')
+          }
+        } else {
+          // No API key: fetch titles via oEmbed and use known counts
+          videoData = await Promise.all(
+            videoIds.map(async (videoId, index) => {
+              try {
+                const oEmbedResponse = await fetch(
+                  `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${videoId}&format=json`
+                )
+                const oEmbedData = await oEmbedResponse.json()
+                return {
+                  id: String(index + 1),
+                  videoId,
+                  title: oEmbedData.title || `Video ${index + 1}`,
+                  views: knownViewCounts[videoId] || undefined,
+                }
+              } catch {
+                return {
+                  id: String(index + 1),
+                  videoId,
+                  title: `Video ${index + 1}`,
+                  views: knownViewCounts[videoId] || undefined,
+                }
               }
-            }
-            
-            return {
-              id: String(index + 1),
-              videoId,
-              title: oEmbedData.title || `Video ${index + 1}`,
-              views: views || undefined
-            }
-          } catch (error) {
-            return {
-              id: String(index + 1),
-              videoId,
-              title: `Video ${index + 1}`,
-              views: knownViewCounts[videoId] || undefined
-            }
+            })
+          )
+        }
+
+        setVideos(videoData)
+
+        // Set view counts
+        const viewCounts: Record<string, number> = {}
+        videoData.forEach((video) => {
+          if (video.views) {
+            viewCounts[video.videoId] = video.views
           }
         })
-      )
-      
-      setVideos(videoData)
-      
-      // Set view counts
-      const viewCounts: Record<string, number> = {}
-      videoData.forEach(video => {
-        if (video.views) {
-          viewCounts[video.videoId] = video.views
-        }
-      })
-      setVideoViews(viewCounts)
-      setIsLoadingViews(false)
+        setVideoViews(viewCounts)
+      } catch (err) {
+        console.error('Failed to fetch YouTube data; falling back to known counts.', err)
+        // Last-resort fallback: minimal data with known counts only
+        const fallbackData: Video[] = videoIds.map((videoId, index) => ({
+          id: String(index + 1),
+          videoId,
+          title: `Video ${index + 1}`,
+          views: knownViewCounts[videoId] || undefined,
+        }))
+        setVideos(fallbackData)
+        const viewCounts: Record<string, number> = {}
+        fallbackData.forEach((v) => {
+          if (v.views) viewCounts[v.videoId] = v.views
+        })
+        setVideoViews(viewCounts)
+      } finally {
+        setIsLoadingViews(false)
+      }
     }
 
     fetchVideoData()
