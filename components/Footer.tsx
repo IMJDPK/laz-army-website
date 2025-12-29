@@ -77,7 +77,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className='mt-16 pt-8 border-t border-neutral-800'>
+    <footer className='mt-16 pt-8 border-t border-neutral-800' role='contentinfo'>
       <div className='max-w-6xl mx-auto px-6'>
         {/* Social Links */}
         <div className='flex justify-center gap-6 mb-6'>

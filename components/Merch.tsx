@@ -23,6 +23,9 @@ export default function Merch() {
     { id: 1, title: 'Laz Army Hoodie', price: 100, img: '/assets/Hoodie.png' },
     { id: 2, title: 'Laz Army Tee', price: 60, img: '/assets/Tshirt.png' },
     { id: 3, title: 'Laz Army Cap', price: 80, img: '/assets/cap.png' },
+    { id: 4, title: 'Laz Army Perfume - Signature', price: 60, img: '/assets/Perfumes1.png' },
+    { id: 5, title: 'Laz Army Perfume - Noir', price: 60, img: '/assets/Perfumes2.png' },
+    { id: 6, title: 'Laz Army Perfume - Elite', price: 60, img: '/assets/Perfumes3.png' },
   ]
 
   const handleOrderClick = (itemTitle: string) => {

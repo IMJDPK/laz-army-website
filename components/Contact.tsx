@@ -33,6 +33,19 @@ export default function Contact() {
         Get in touch for bookings, collaborations, or press inquiries
       </p>
 
+      {/* Contact Manager Info */}
+      <div className='mb-6 p-4 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-lg border border-yellow-400/30'>
+        <p className='text-sm font-semibold text-yellow-400 mb-2'>
+          📧 Contact Manager
+        </p>
+        <p className='text-lg font-bold text-white mb-1'>
+          Sharjil Khan
+        </p>
+        <p className='text-xs text-neutral-400'>
+          For all booking and collaboration inquiries
+        </p>
+      </div>
+
       {/* Quick Contact Info */}
       <div className='mb-6 p-4 bg-black/40 rounded-lg border border-yellow-400/20'>
         <p className='text-sm text-neutral-300 mb-2'>

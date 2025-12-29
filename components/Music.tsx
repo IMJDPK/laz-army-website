@@ -59,6 +59,7 @@ export default function Music() {
   const [videos, setVideos] = useState<Video[]>([])
   const [videoViews, setVideoViews] = useState<Record<string, number>>({})
   const [isLoadingViews, setIsLoadingViews] = useState(true)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     // Fetch real video titles and view counts from YouTube
@@ -154,7 +155,11 @@ export default function Music() {
         })
         setVideoViews(viewCounts)
       } catch (err) {
-        console.error('Failed to fetch YouTube data; falling back to known counts.', err)
+        // Silently fall back to known counts without logging in production
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('Failed to fetch YouTube data; using fallback counts.', err)
+        }
+        setHasError(true)
         // Last-resort fallback: minimal data with known counts only
         const fallbackData: Video[] = videoIds.map((videoId, index) => ({
           id: String(index + 1),

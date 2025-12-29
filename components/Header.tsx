@@ -27,7 +27,15 @@ export default function Header({ siteTitle }: { siteTitle: string }) {
 
   return (
     <header className='sticky top-0 z-50 bg-black/95 backdrop-blur-sm border-b border-neutral-800'>
-      <nav className='max-w-7xl mx-auto px-6 py-4'>
+      {/* Skip to main content link for accessibility */}
+      <a 
+        href='#main-content' 
+        className='sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[60] focus:bg-yellow-400 focus:text-black focus:px-4 focus:py-2 focus:rounded focus:font-bold'
+      >
+        Skip to main content
+      </a>
+      
+      <nav className='max-w-7xl mx-auto px-6 py-4' aria-label='Main navigation'>
         <div className='flex items-center justify-between'>
           {/* Logo */}
           <a href='/' className='group'>
@@ -78,7 +86,7 @@ export default function Header({ siteTitle }: { siteTitle: string }) {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className='md:hidden mt-4 pb-4 border-t border-neutral-800 pt-4'>
+          <div className='md:hidden mt-4 pb-4 border-t border-neutral-800 pt-4 animate-fadeInUp'>
             <div className='flex flex-col gap-4'>
               {navLinks.map((link) => (
                 <a

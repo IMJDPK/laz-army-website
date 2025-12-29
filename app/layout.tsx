@@ -49,12 +49,16 @@ export const metadata: Metadata = {
     title: 'Lazarus - Hip Hop Artist, Rapper & Physician | Laz Army Records',
     description: 'Official website of Lazarus — Detroit-born rapper and physician. Stream music, shop merch, and follow new releases.',
     images: [`${baseUrl}/assets/Lazarmy-logo.png`],
-    creator: '@lazarus', // Update with actual Twitter handle
+    creator: '@lazdetroit',
   },
   icons: {
-    // Use existing logo as placeholder icon until dedicated icons are generated
-    icon: '/assets/Lazarmy-logo.png',
-    apple: '/assets/Lazarmy-logo.png',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/assets/Lazarmy-logo.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/assets/Lazarmy-logo.png', sizes: '180x180', type: 'image/png' },
+    ],
   },
   manifest: '/site.webmanifest',
   alternates: {

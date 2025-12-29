@@ -4,17 +4,35 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#000000",
+  "theme_color": "#facc15",
+  "description": "Official website of Lazarus - Hip Hop Artist, Rapper & Physician. Stream music, shop merch, and join the movement.",
   "icons": [
     {
       "src": "/assets/Lazarmy-logo.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "/assets/Lazarmy-logo.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["music", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Music",
+      "short_name": "Music",
+      "url": "/#music",
+      "icons": [{ "src": "/assets/Lazarmy-logo.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Tour",
+      "short_name": "Tour",
+      "url": "/#tour",
+      "icons": [{ "src": "/assets/Lazarmy-logo.png", "sizes": "192x192" }]
     }
   ]
 }

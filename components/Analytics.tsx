@@ -3,8 +3,8 @@
 import { useEffect, Suspense } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 
-// Google Analytics tracking ID - replace with your actual GA4 ID
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XXXXXXXXXX'
+// Google Analytics tracking ID
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-XLSDCP2LE0'
 
 // Page view tracking
 export function pageview(url: string) {
@@ -48,13 +48,9 @@ function AnalyticsTracker() {
 
 // Analytics component to include in layout
 export default function Analytics() {
-  if (process.env.NODE_ENV !== 'production') {
-    return null
-  }
-
   return (
     <>
-      {/* Google Analytics */}
+      {/* Google tag (gtag.js) */}
       <script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
