@@ -8,6 +8,7 @@ type Item = {
   title: string
   price: number
   img: string
+  limited?: number
 }
 
 const formatPrice = (n: number) =>
@@ -21,11 +22,12 @@ export default function Merch() {
   // Updated to use dedicated merch asset images instead of generic banners
   const items: Item[] = [
     { id: 1, title: 'Laz Army Hoodie', price: 100, img: '/assets/Hoodie.png' },
-    { id: 2, title: 'Laz Army Tee', price: 60, img: '/assets/Tshirt.png' },
-    { id: 3, title: 'Laz Army Cap', price: 80, img: '/assets/cap.png' },
-    { id: 4, title: 'Laz Army Perfume - Signature', price: 60, img: '/assets/Perfumes1.png' },
-    { id: 5, title: 'Laz Army Perfume - Noir', price: 60, img: '/assets/Perfumes2.png' },
-    { id: 6, title: 'Laz Army Perfume - Elite', price: 60, img: '/assets/Perfumes3.png' },
+    { id: 2, title: 'Laz Army Tee - Limited Edition', price: 75, img: '/assets/Tshirt-Limited-100-pieces.png', limited: 100 },
+    { id: 3, title: 'Laz Army Tee', price: 60, img: '/assets/Tshirt.png' },
+    { id: 4, title: 'Laz Army Cap', price: 80, img: '/assets/cap.png' },
+    { id: 5, title: 'Laz Army Perfume - Signature', price: 60, img: '/assets/Perfumes1.png' },
+    { id: 6, title: 'Laz Army Perfume - Noir', price: 60, img: '/assets/Perfumes2.png' },
+    { id: 7, title: 'Laz Army Perfume - Elite', price: 60, img: '/assets/Perfumes3.png' },
   ]
 
   const handleOrderClick = (itemTitle: string) => {
@@ -59,10 +61,18 @@ export default function Merch() {
                   className='object-contain group-hover:scale-110 transition-transform duration-500'
                   sizes='(max-width: 768px) 100vw, 33vw'
                 />
+                {it.limited && (
+                  <div className='absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg z-10'>
+                    LIMITED {it.limited} UNITS
+                  </div>
+                )}
               </div>
               
               <div className='p-5 text-center'>
                 <h4 className='text-xl font-bold mb-2 text-white'>{it.title}</h4>
+                {it.limited && (
+                  <p className='text-sm text-red-400 font-semibold mb-2'>⚠️ Only {it.limited} pieces available!</p>
+                )}
                 <p className='text-2xl font-bold text-yellow-400 mb-4'>{formatPrice(it.price)}</p>
                 
                 <a
@@ -82,12 +92,6 @@ export default function Merch() {
             </div>
           )
         })}
-      </div>
-
-      <div className='mt-8 text-center'>
-        <p className='text-sm text-neutral-400'>
-          Free shipping on orders over PKR 5,000 • Secure payment via WhatsApp
-        </p>
       </div>
     </section>
   )

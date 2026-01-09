@@ -48,6 +48,7 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 export default function Music() {
   // Official YouTube videos from Lazarus channel - videoIds only
   const videoIds = [
+    'nx16bRP2V6U', // Dr. Jekyll & Mr. Hyde (2026) - NEW RELEASE
     'et1IEh8AtYw', 'BiMWSfzmrpU', 'ReoSUfChqCg', 'c30SEWFWRyQ',
     'd-2UHwp8dl4', 'pmnjGk2TINE', 'VHFlPRdeSQ8', '2LOCu2o8K8Q',
     'Orhjjc5ksro', 'F9WQ94Gpmuk', 'XI_VjcfQCsQ', 'sueBQjjAx84',
@@ -184,41 +185,40 @@ export default function Music() {
   // Duplicate videos array for seamless loop
   const duplicatedVideos = [...videos, ...videos]
 
-  // Highlight single track streaming links (Not To Be Defined – Lazarus & Rakim)
-  const trackArtwork = 'https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/74/eb/10/74eb10b0-4ad3-9266-e53b-9cb1d30532a8/198704573620_Cover.jpg/512x512bb.jpg'
-  const trackTitle = 'Not To Be Defined'
-  const trackArtists = 'Lazarus & Rakim'
-  const aggregatorUrl = 'https://song.link/NTBD'
+  // Highlight single track streaming links (Dr. Jekyll & Mr. Hyde – Lazarus, Royce Da 5'9" & Ikka)
+  const trackArtwork = '/assets/Dr. Jekyll & Mr. Hyde.jpeg'
+  const trackTitle = 'Dr. Jekyll & Mr. Hyde'
+  const trackArtists = 'Lazarus, Royce Da 5\'9" & Ikka'
+  const trackDescription = 'Lazarus combines the West with the East by recruiting his fellow Detroit emcee Royce Da 5\'9" alongside Delhi\'s very own Ikka on this back and forth lyrical anthem.'
+  const trackCredits = {
+    written: 'Lazarus, Royce Da 5\'9" & Ikka',
+    produced: 'Shawn Ski',
+    engineered: 'Hugo Castillo',
+    mixed: 'Jake Bass',
+    mastered: 'Eric Morgeson',
+    video: 'Naman Art',
+    executive: 'Lazarus'
+  }
   const platformLinks: { name: string; url: string; style: string }[] = [
     {
       name: 'Apple Music',
-      url: 'https://geo.music.apple.com/pk/album/_/1822197901?i=1822197995&mt=1&app=music&ls=1&at=1000lHKX&ct=odesli_http&itscg=30200&itsct=odsl_m',
+      url: 'https://music.apple.com/us/album/dr-jekyll-mr-hyde-single/1865836233',
       style: 'bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600'
     },
     {
       name: 'Spotify',
-      url: 'https://open.spotify.com/track/5liV4nnfyhIKgzJtdsYApy',
+      url: 'https://open.spotify.com/album/1mjrdGpHzUWk3HpI6Vdk5S',
       style: 'bg-green-600 hover:bg-green-700'
     },
     {
       name: 'YouTube',
-      url: 'https://www.youtube.com/watch?v=et1IEh8AtYw',
+      url: 'https://www.youtube.com/watch?v=nx16bRP2V6U',
       style: 'bg-red-600 hover:bg-red-700'
     },
     {
       name: 'YouTube Music',
-      url: 'https://music.youtube.com/watch?v=et1IEh8AtYw',
+      url: 'https://music.youtube.com/watch?v=nx16bRP2V6U',
       style: 'bg-red-500 hover:bg-red-600'
-    },
-    {
-      name: 'Pandora',
-      url: 'https://www.pandora.com/TR:166267843',
-      style: 'bg-blue-600 hover:bg-blue-700'
-    },
-    {
-      name: 'More Platforms',
-      url: aggregatorUrl,
-      style: 'bg-purple-600 hover:bg-purple-700'
     }
   ]
 
@@ -265,15 +265,16 @@ export default function Music() {
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <h3 className="text-xl font-bold text-white mb-1">{trackTitle}</h3>
                 <p className="text-sm text-yellow-300 tracking-wide">{trackArtists}</p>
+                <p className="text-xs text-gray-400 mt-2">© 2026 Laz Army Records</p>
                 {/* Animated View Counter */}
-                {!isLoadingViews && videoViews['et1IEh8AtYw'] && (
+                {!isLoadingViews && videoViews['nx16bRP2V6U'] && (
                   <div className="mt-3 flex items-center gap-2 text-gray-300">
                     <svg className="w-4 h-4 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
                     <span className="text-xs font-semibold">
-                      <AnimatedCounter value={videoViews['et1IEh8AtYw']} suffix="+ views & counting" />
+                      <AnimatedCounter value={videoViews['nx16bRP2V6U']} suffix="+ views & counting" />
                     </span>
                   </div>
                 )}
@@ -283,11 +284,22 @@ export default function Music() {
           <div className="md:col-span-2 flex flex-col justify-between">
             <div>
               <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                Stream the Latest Release
+                Latest Release: {trackTitle}
               </h4>
-              <p className="text-gray-400 mb-6 max-w-prose">
-                Tap a platform below to listen to <span className="text-yellow-300 font-medium">{trackTitle}</span> by {trackArtists}. These direct links
-                open the official track. Use <span className="text-purple-400">More Platforms</span> for additional services (Audiomack, TIDAL, Deezer, etc.).
+              <p className="text-gray-300 mb-4 max-w-prose">
+                {trackDescription}
+              </p>
+              <div className="mb-6 text-sm text-gray-400 space-y-1">
+                <p><span className="text-gray-500">Written & Performed by:</span> {trackCredits.written}</p>
+                <p><span className="text-gray-500">Produced by:</span> {trackCredits.produced}</p>
+                <p><span className="text-gray-500">Engineered by:</span> {trackCredits.engineered}</p>
+                <p><span className="text-gray-500">Mixed by:</span> {trackCredits.mixed}</p>
+                <p><span className="text-gray-500">Mastered by:</span> {trackCredits.mastered}</p>
+                <p><span className="text-gray-500">Video by:</span> {trackCredits.video}</p>
+                <p><span className="text-gray-500">Executive Producer:</span> {trackCredits.executive}</p>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm">
+                Stream now on all major platforms:
               </p>
               <div className="flex flex-wrap gap-3">
                 {platformLinks.map(pl => (
@@ -315,7 +327,7 @@ export default function Music() {
             </div>
             <div className="mt-8 text-xs text-gray-500">
               <p>
-                Link sources aggregated via <a href={aggregatorUrl} target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:text-purple-300 underline">song.link</a>. Some platforms may require account login or regional availability.
+                Available on Apple Music, Spotify, YouTube, and YouTube Music. Some platforms may require account login or regional availability.
               </p>
             </div>
           </div>
