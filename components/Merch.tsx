@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { trackGearClick } from './Analytics'
 
-const WA_NUMBER = '923001234567'
+const WA_NUMBER = '17347782556'
 
 type Item = {
   id: number

@@ -21,7 +21,7 @@ export const env = {
   YOUTUBE_CHANNEL_ID: process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID,
   
   // Contact
-  WHATSAPP_NUMBER: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '923001234567',
+  WHATSAPP_NUMBER: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '17347782556',
   
   // Environment
   IS_PRODUCTION: process.env.NODE_ENV === 'production',
