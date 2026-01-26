@@ -48,7 +48,8 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 export default function Music() {
   // Official YouTube videos from Lazarus channel - videoIds only
   const videoIds = [
-    'nx16bRP2V6U', // Dr. Jekyll & Mr. Hyde (2026) - NEW RELEASE
+    'JADGm6fdotQ', // Lazarus & Swifty McVay - Detroit (2026) - NEW RELEASE
+    'nx16bRP2V6U', // Dr. Jekyll & Mr. Hyde (2026)
     'et1IEh8AtYw', 'BiMWSfzmrpU', 'ReoSUfChqCg', 'c30SEWFWRyQ',
     'd-2UHwp8dl4', 'pmnjGk2TINE', 'VHFlPRdeSQ8', '2LOCu2o8K8Q',
     'Orhjjc5ksro', 'F9WQ94Gpmuk', 'XI_VjcfQCsQ', 'sueBQjjAx84',
@@ -185,40 +186,25 @@ export default function Music() {
   // Duplicate videos array for seamless loop
   const duplicatedVideos = [...videos, ...videos]
 
-  // Highlight single track streaming links (Dr. Jekyll & Mr. Hyde – Lazarus, Royce Da 5'9" & Ikka)
-  const trackArtwork = '/assets/Dr. Jekyll & Mr. Hyde.jpeg'
-  const trackTitle = 'Dr. Jekyll & Mr. Hyde'
-  const trackArtists = 'Lazarus, Royce Da 5\'9" & Ikka'
-  const trackDescription = 'Lazarus combines the West with the East by recruiting his fellow Detroit emcee Royce Da 5\'9" alongside Delhi\'s very own Ikka on this back and forth lyrical anthem.'
+  // Highlight single track streaming links (Death Blow – Lazarus & Swifty McVay)
+  const trackArtwork = '/assets/Deathblow.png'
+  const trackTitle = 'Death Blow'
+  const trackArtists = 'Lazarus & Swifty McVay (D12)'
+  const trackDescription = "Lazarus and Swifty McVay of D12 show why you don't mess with DETROIT!"
   const trackCredits = {
-    written: 'Lazarus, Royce Da 5\'9" & Ikka',
-    produced: 'Shawn Ski',
+    written: 'Lazarus & Swifty McVay',
+    produced: 'Stan Da Man',
     engineered: 'Hugo Castillo',
     mixed: 'Jake Bass',
-    mastered: 'Eric Morgeson',
-    video: 'Naman Art',
+    mastered: 'Andray Higgins',
+    video: 'Matt Alonzo',
     executive: 'Lazarus'
   }
   const platformLinks: { name: string; url: string; style: string }[] = [
     {
-      name: 'Apple Music',
-      url: 'https://music.apple.com/us/album/dr-jekyll-mr-hyde-single/1865836233',
-      style: 'bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600'
-    },
-    {
-      name: 'Spotify',
-      url: 'https://open.spotify.com/album/1mjrdGpHzUWk3HpI6Vdk5S',
-      style: 'bg-green-600 hover:bg-green-700'
-    },
-    {
       name: 'YouTube',
-      url: 'https://www.youtube.com/watch?v=nx16bRP2V6U',
+      url: 'https://youtu.be/JADGm6fdotQ',
       style: 'bg-red-600 hover:bg-red-700'
-    },
-    {
-      name: 'YouTube Music',
-      url: 'https://music.youtube.com/watch?v=nx16bRP2V6U',
-      style: 'bg-red-500 hover:bg-red-600'
     }
   ]
 
