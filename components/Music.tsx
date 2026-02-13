@@ -48,7 +48,8 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 export default function Music() {
   // Official YouTube videos from Lazarus channel - videoIds only
   const videoIds = [
-    'JADGm6fdotQ', // Lazarus & Swifty McVay - Detroit (2026) - NEW RELEASE
+    'AaxWwEUIC0g', // TROLL KILLER (2026) - NEWEST RELEASE
+    'JADGm6fdotQ', // Lazarus & Swifty McVay - Detroit (2026)
     'nx16bRP2V6U', // Dr. Jekyll & Mr. Hyde (2026)
     'et1IEh8AtYw', 'BiMWSfzmrpU', 'ReoSUfChqCg', 'c30SEWFWRyQ',
     'd-2UHwp8dl4', 'pmnjGk2TINE', 'VHFlPRdeSQ8', '2LOCu2o8K8Q',
@@ -186,7 +187,27 @@ export default function Music() {
   // Duplicate videos array for seamless loop
   const duplicatedVideos = [...videos, ...videos]
 
-  // Highlight single track streaming links (Death Blow – Lazarus & Swifty McVay)
+  // TROLL KILLER – Latest Release
+  const trollKillerTrack = {
+    artwork: '/assets/troll-killer.jpeg',
+    videoId: 'AaxWwEUIC0g',
+    title: 'TROLL KILLER',
+    artists: 'Lazarus',
+    description: "No gimmicks. No narratives. Just bars. From battle rap roots to global stages, this one speaks for itself. Special love to Mahabharat Mother India. Hip Hop is love not division.",
+    credits: {
+      written: 'Lazarus',
+      produced: 'Dem Jointz & Andray Higgins',
+      engineered: 'Christian Matute',
+      mixed: 'Jake Bass',
+      mastered: 'Andray Higgins',
+      video: 'Matt Alonzo',
+      executive: 'Lazarus'
+    },
+    streamLink: 'https://song.link/TROLLKILLER',
+    youtubeLink: 'https://www.youtube.com/watch?v=AaxWwEUIC0g'
+  }
+
+  // Death Blow – Lazarus & Swifty McVay
   const trackArtwork = '/assets/Deathblow.png'
   const trackTitle = 'Death Blow'
   const trackArtists = 'Lazarus & Swifty McVay (D12)'
@@ -237,7 +258,109 @@ export default function Music() {
           </div>
         </div>
 
-        {/* Featured Track Section */}
+        {/* TROLL KILLER Featured Track Section */}
+        <div className="mb-12 grid md:grid-cols-3 gap-8 items-stretch">
+          <div className="md:col-span-1 flex flex-col">
+            <div className="relative overflow-hidden rounded-xl border border-red-500/30 shadow-lg shadow-red-500/10">
+              <img
+                src={trollKillerTrack.artwork}
+                alt={`${trollKillerTrack.title} cover art`}
+                className="w-full aspect-square object-cover"
+                loading="lazy"
+                onError={(e) => {
+                  // Fallback to video thumbnail if artwork doesn't exist yet
+                  const target = e.currentTarget;
+                  target.src = `https://img.youtube.com/vi/${trollKillerTrack.videoId}/maxresdefault.jpg`;
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-4">
+                <h3 className="text-xl font-bold text-white mb-1">{trollKillerTrack.title}</h3>
+                <p className="text-sm text-red-300 tracking-wide">{trollKillerTrack.artists}</p>
+                <p className="text-xs text-gray-400 mt-2">© 2026 Laz Army Records</p>
+                {/* Animated View Counter */}
+                {!isLoadingViews && videoViews[trollKillerTrack.videoId] && (
+                  <div className="mt-3 flex items-center gap-2 text-gray-300">
+                    <svg className="w-4 h-4 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                      <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-xs font-semibold">
+                      <AnimatedCounter value={videoViews[trollKillerTrack.videoId]} suffix="+ views & counting" />
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="md:col-span-2 flex flex-col justify-between">
+            <div>
+              <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 bg-clip-text text-transparent">
+                🔥 Newest Release: {trollKillerTrack.title}
+              </h4>
+              <p className="text-gray-300 mb-4 max-w-prose">
+                {trollKillerTrack.description}
+              </p>
+              <div className="mb-6 text-sm text-gray-400 space-y-1">
+                <p><span className="text-gray-500">Written & Performed by:</span> {trollKillerTrack.credits.written}</p>
+                <p><span className="text-gray-500">Produced by:</span> {trollKillerTrack.credits.produced}</p>
+                <p><span className="text-gray-500">Engineered by:</span> {trollKillerTrack.credits.engineered}</p>
+                <p><span className="text-gray-500">Mixed by:</span> {trollKillerTrack.credits.mixed}</p>
+                <p><span className="text-gray-500">Mastered by:</span> {trollKillerTrack.credits.mastered}</p>
+                <p><span className="text-gray-500">Shot by:</span> {trollKillerTrack.credits.video}</p>
+                <p><span className="text-gray-500">Executive Producer:</span> {trollKillerTrack.credits.executive}</p>
+              </div>
+              <p className="text-gray-400 mb-6 text-sm">
+                Stream now on all major platforms:
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={trollKillerTrack.youtubeLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-full font-semibold text-sm shadow hover:shadow-lg transition-all"
+                  aria-label="Watch on YouTube"
+                >
+                  <span>YouTube</span>
+                  <svg
+                    className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 12h15" />
+                  </svg>
+                </a>
+                <a
+                  href={trollKillerTrack.streamLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-5 py-3 rounded-full font-semibold text-sm shadow hover:shadow-lg transition-all"
+                  aria-label="Stream on all platforms"
+                >
+                  <span>All Platforms</span>
+                  <svg
+                    className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 5l7 7-7 7M5 12h15" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="mt-8 text-xs text-gray-500">
+              <p>
+                Available on Apple Music, Spotify, YouTube, and YouTube Music. Some platforms may require account login or regional availability.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Death Blow Featured Track Section */}
         <div className="mb-20 grid md:grid-cols-3 gap-8 items-stretch">
           <div className="md:col-span-1 flex flex-col">
             <div className="relative overflow-hidden rounded-xl border border-yellow-500/30 shadow-lg shadow-yellow-500/10">
@@ -270,7 +393,7 @@ export default function Music() {
           <div className="md:col-span-2 flex flex-col justify-between">
             <div>
               <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                Latest Release: {trackTitle}
+                Death Blow
               </h4>
               <p className="text-gray-300 mb-4 max-w-prose">
                 {trackDescription}
