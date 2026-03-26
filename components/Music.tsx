@@ -48,7 +48,8 @@ function AnimatedCounter({ value, suffix = '' }: { value: number; suffix?: strin
 export default function Music() {
   // Official YouTube videos from Lazarus channel - videoIds only
   const videoIds = [
-    'AaxWwEUIC0g', // TROLL KILLER (2026) - NEWEST RELEASE
+    'BGw1taS5tq0', // JHOOTE KA JANAZA (THE LIAR'S FUNERAL) (2026) - NEWEST RELEASE
+    'AaxWwEUIC0g', // TROLL KILLER (2026)
     'JADGm6fdotQ', // Lazarus & Swifty McVay - Detroit (2026)
     'nx16bRP2V6U', // Dr. Jekyll & Mr. Hyde (2026)
     'et1IEh8AtYw', 'BiMWSfzmrpU', 'ReoSUfChqCg', 'c30SEWFWRyQ',
@@ -187,24 +188,24 @@ export default function Music() {
   // Duplicate videos array for seamless loop
   const duplicatedVideos = [...videos, ...videos]
 
-  // TROLL KILLER – Latest Release
-  const trollKillerTrack = {
-    artwork: '/assets/troll-killer.jpeg',
-    videoId: 'AaxWwEUIC0g',
-    title: 'TROLL KILLER',
+  // JHOOTE KA JANAZA (THE LIAR'S FUNERAL) – Latest Release
+  const featuredRelease = {
+    artwork: "/assets/JHOOTE KA JANAZA (THE LIAR'S FUNERAL).jpeg",
+    videoId: 'BGw1taS5tq0',
+    title: "JHOOTE KA JANAZA (THE LIAR'S FUNERAL)",
     artists: 'Lazarus',
-    description: "No gimmicks. No narratives. Just bars. From battle rap roots to global stages, this one speaks for itself. Special love to Mahabharat Mother India. Hip Hop is love not division.",
-    credits: {
-      written: 'Lazarus',
-      produced: 'Dem Jointz & Andray Higgins',
-      engineered: 'Christian Matute',
-      mixed: 'Jake Bass',
-      mastered: 'Andray Higgins',
-      video: 'Matt Alonzo',
-      executive: 'Lazarus'
-    },
-    streamLink: 'https://song.link/TROLLKILLER',
-    youtubeLink: 'https://www.youtube.com/watch?v=AaxWwEUIC0g'
+    description: "Lazarus returns on the mic to orchestrate a liar's funeral, with proof.",
+    credits: [
+      { label: 'Written & Performed by', value: 'Lazarus' },
+      { label: 'Music Produced by', value: 'Kaky Thou$and' },
+      { label: 'Music Engineered by', value: 'Hugo Castillo' },
+      { label: 'Music Mastered by', value: 'Andray Higgins' },
+      { label: 'Edited & Directed by', value: 'Matt Alonzo' },
+      { label: 'Executive Producer', value: 'Lazarus' },
+    ],
+    secondaryLink: 'https://www.lazarmyrecords.com',
+    secondaryLinkLabel: 'Official Site',
+    youtubeLink: 'https://youtu.be/BGw1taS5tq0?si=3pqkJzhAdFZ81zC-'
   }
 
   // Death Blow – Lazarus & Swifty McVay
@@ -258,35 +259,35 @@ export default function Music() {
           </div>
         </div>
 
-        {/* TROLL KILLER Featured Track Section */}
+        {/* Featured Release Section */}
         <div className="mb-12 grid md:grid-cols-3 gap-8 items-stretch">
           <div className="md:col-span-1 flex flex-col">
             <div className="relative overflow-hidden rounded-xl border border-red-500/30 shadow-lg shadow-red-500/10">
               <img
-                src={trollKillerTrack.artwork}
-                alt={`${trollKillerTrack.title} cover art`}
+                src={featuredRelease.artwork}
+                alt={`${featuredRelease.title} cover art`}
                 className="w-full aspect-square object-cover"
                 loading="lazy"
                 onError={(e) => {
                   // Fallback to video thumbnail if artwork doesn't exist yet
                   const target = e.currentTarget;
-                  target.src = `https://img.youtube.com/vi/${trollKillerTrack.videoId}/maxresdefault.jpg`;
+                  target.src = `https://img.youtube.com/vi/${featuredRelease.videoId}/maxresdefault.jpg`;
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-4">
-                <h3 className="text-xl font-bold text-white mb-1">{trollKillerTrack.title}</h3>
-                <p className="text-sm text-red-300 tracking-wide">{trollKillerTrack.artists}</p>
+                <h3 className="text-xl font-bold text-white mb-1">{featuredRelease.title}</h3>
+                <p className="text-sm text-red-300 tracking-wide">{featuredRelease.artists}</p>
                 <p className="text-xs text-gray-400 mt-2">© 2026 Laz Army Records</p>
                 {/* Animated View Counter */}
-                {!isLoadingViews && videoViews[trollKillerTrack.videoId] && (
+                {!isLoadingViews && videoViews[featuredRelease.videoId] && (
                   <div className="mt-3 flex items-center gap-2 text-gray-300">
                     <svg className="w-4 h-4 text-red-500 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
                       <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
                     </svg>
                     <span className="text-xs font-semibold">
-                      <AnimatedCounter value={videoViews[trollKillerTrack.videoId]} suffix="+ views & counting" />
+                      <AnimatedCounter value={videoViews[featuredRelease.videoId]} suffix="+ views & counting" />
                     </span>
                   </div>
                 )}
@@ -296,26 +297,22 @@ export default function Music() {
           <div className="md:col-span-2 flex flex-col justify-between">
             <div>
               <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-red-500 via-orange-500 to-yellow-400 bg-clip-text text-transparent">
-                🔥 Newest Release: {trollKillerTrack.title}
+                Newest Release: {featuredRelease.title}
               </h4>
               <p className="text-gray-300 mb-4 max-w-prose">
-                {trollKillerTrack.description}
+                {featuredRelease.description}
               </p>
               <div className="mb-6 text-sm text-gray-400 space-y-1">
-                <p><span className="text-gray-500">Written & Performed by:</span> {trollKillerTrack.credits.written}</p>
-                <p><span className="text-gray-500">Produced by:</span> {trollKillerTrack.credits.produced}</p>
-                <p><span className="text-gray-500">Engineered by:</span> {trollKillerTrack.credits.engineered}</p>
-                <p><span className="text-gray-500">Mixed by:</span> {trollKillerTrack.credits.mixed}</p>
-                <p><span className="text-gray-500">Mastered by:</span> {trollKillerTrack.credits.mastered}</p>
-                <p><span className="text-gray-500">Shot by:</span> {trollKillerTrack.credits.video}</p>
-                <p><span className="text-gray-500">Executive Producer:</span> {trollKillerTrack.credits.executive}</p>
+                {featuredRelease.credits.map((credit) => (
+                  <p key={credit.label}><span className="text-gray-500">{credit.label}:</span> {credit.value}</p>
+                ))}
               </div>
               <p className="text-gray-400 mb-6 text-sm">
-                Stream now on all major platforms:
+                Watch now and visit the official site:
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href={trollKillerTrack.youtubeLink}
+                  href={featuredRelease.youtubeLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-5 py-3 rounded-full font-semibold text-sm shadow hover:shadow-lg transition-all"
@@ -333,13 +330,13 @@ export default function Music() {
                   </svg>
                 </a>
                 <a
-                  href={trollKillerTrack.streamLink}
+                  href={featuredRelease.secondaryLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-5 py-3 rounded-full font-semibold text-sm shadow hover:shadow-lg transition-all"
-                  aria-label="Stream on all platforms"
+                  aria-label={featuredRelease.secondaryLinkLabel}
                 >
-                  <span>All Platforms</span>
+                  <span>{featuredRelease.secondaryLinkLabel}</span>
                   <svg
                     className="w-4 h-4 opacity-70 group-hover:opacity-100 transition-opacity"
                     fill="none"
@@ -354,7 +351,7 @@ export default function Music() {
             </div>
             <div className="mt-8 text-xs text-gray-500">
               <p>
-                Available on Apple Music, Spotify, YouTube, and YouTube Music. Some platforms may require account login or regional availability.
+                Official release page and video are live now. Additional platform availability may vary by region and release timing.
               </p>
             </div>
           </div>
