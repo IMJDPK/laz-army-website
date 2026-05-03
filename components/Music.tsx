@@ -208,9 +208,9 @@ export default function Music() {
     youtubeLink: 'https://youtu.be/BGw1taS5tq0?si=3pqkJzhAdFZ81zC-'
   }
 
-  // Death Blow – Lazarus & Swifty McVay
+  // Deathblow – Lazarus & Swifty McVay
   const trackArtwork = '/assets/Deathblow.png'
-  const trackTitle = 'Death Blow'
+  const trackTitle = 'Deathblow'
   const trackArtists = 'Lazarus & Swifty McVay (D12)'
   const trackDescription = "Lazarus and Swifty McVay of D12 show why you don't mess with DETROIT!"
   const trackCredits = {
@@ -357,7 +357,7 @@ export default function Music() {
           </div>
         </div>
 
-        {/* Death Blow Featured Track Section */}
+        {/* Deathblow Featured Track Section */}
         <div className="mb-20 grid md:grid-cols-3 gap-8 items-stretch">
           <div className="md:col-span-1 flex flex-col">
             <div className="relative overflow-hidden rounded-xl border border-yellow-500/30 shadow-lg shadow-yellow-500/10">
@@ -390,7 +390,7 @@ export default function Music() {
           <div className="md:col-span-2 flex flex-col justify-between">
             <div>
               <h4 className="text-2xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                Death Blow
+                Deathblow
               </h4>
               <p className="text-gray-300 mb-4 max-w-prose">
                 {trackDescription}
